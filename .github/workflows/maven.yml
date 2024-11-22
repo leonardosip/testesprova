@@ -27,5 +27,10 @@ jobs:
         java-version: '17'
         distribution: 'temurin'
         cache: maven
+    # Instala dependências e compila o projeto
     - name: Build with Maven
       run: mvn install
+
+    # Executa os testes
+    - name: Run Tests
+      run: mvn test
