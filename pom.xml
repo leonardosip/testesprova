@@ -4,6 +4,13 @@
   <artifactId>prova</artifactId>
   <version>0.0.1-SNAPSHOT</version>
 
+  <properties>
+    <!-- Define a versão do Java usada no projeto -->
+    <maven.compiler.source>17</maven.compiler.source>
+    <maven.compiler.target>17</maven.compiler.target>
+    <maven.compiler.release>17</maven.compiler.release>
+  </properties>
+
   <dependencies>
     <!-- JUnit 5 -->
     <dependency>
@@ -16,7 +23,18 @@
 
   <build>
     <plugins>
-      <!-- Maven Surefire Plugin para rodar testes -->
+      <!-- Plugin do compilador Maven -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.10.1</version>
+        <configuration>
+          <source>${maven.compiler.source}</source>
+          <target>${maven.compiler.target}</target>
+        </configuration>
+      </plugin>
+      
+      <!-- Plugin Surefire para executar testes -->
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-surefire-plugin</artifactId>
