@@ -10,7 +10,7 @@ class calculadoraTest {
 
     @Test
     void testSomar() {
-        assertEquals(6, calculadora.somar(2, 3));
+        assertEquals(5, calculadora.somar(2, 3));
     }
 
     @Test
